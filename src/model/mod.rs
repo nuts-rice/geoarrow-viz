@@ -42,7 +42,7 @@ impl GeoArrowFile {
 
     async fn load_from_url(&mut self) -> GeoArrowResult<()> {
         tracing::info!("Loading geoarrow file from URL: {}", self.path);
-        let response = 
+//        let response = 
         Ok(())
 
     }
@@ -51,86 +51,4 @@ impl GeoArrowFile {
         &self.path
     }
 }
-
-pub struct MapStyle {
-    pub point_color: String,
-    pub line_color: String,
-    pub polygon_fill: String,
-    pub polygon_stroke: String,
-    pub point_radius: f64,
-    pub line_width: f64,
-
-}
-impl Default for MapStyle {
-    fn default() -> Self {
-        MapStyle {
-            point_color: "#FF0000".to_string(),
-            line_color: "#0000FF".to_string(),
-            polygon_fill: "rgba(0, 255, 0, 0.3)".to_string(),
-            polygon_stroke: "#00FF00".to_string(),
-            point_radius: 3.0,
-            line_width: 2.0,
-        }
-    }
-}
-
-
-
-pub struct MapView {
-    pub position: (f64, f64),
-    pub zoom: u8,
-    pub bounds: Option<Bounds>, 
-    pub id: i32,
-    pub geoarrow_file: GeoArrowFile,
-    pub style: MapStyle,
-}
-
-impl Default for MapView {
-    fn default() -> Self {
-        MapView {
-            position: (0.0, 0.0),
-            zoom: 1,
-            bounds: None,
-            id: 0,
-            geoarrow_file: GeoArrowFile::new(
-                "./data/Utah.geojson".to_string(),
-                0,
-                "2023-01-01".to_string(),
-            ),
-            style: MapStyle::default(),
-        }
-    }
-}
-
-impl MapView {
-    pub fn new(id: i32, geoarrow_file: GeoArrowFile, position: (f64, f64), zoom: u8) -> Self {
-        MapView {
-            id,
-            zoom,
-            geoarrow_file,
-            bounds: None,
-            position,
-            style: MapStyle::default(),
-        }
-    }
-
-    pub fn set_position(&mut self, position: (f64, f64)) {
-        self.position = position;
-    }
-
-    pub fn get_position(&self) -> (f64, f64) {
-        self.position
-    }
-
-    pub fn set_zoom(&mut self, zoom: u8) {
-        self.zoom = zoom; 
-    }
-
-    pub fn get_zoom(&self) -> u8 {
-        self.zoom
-    }
-
-}
-
-
 

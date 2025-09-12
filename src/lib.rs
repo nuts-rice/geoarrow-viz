@@ -1,7 +1,14 @@
-mod error;
-mod model;
-mod view;
+use wasm_bindgen::prelude::*;
 
-fn main() {
+mod error;
+use error::{GeoArrowError};
+mod model;
+use model::{Bounds, GeoArrowFile, GeoArrowResult  };
+mod view;
+use view::view::{MapView, MapStyle};
+
+
+#[wasm_bindgen(start)]
+fn start() {
     println!("Hello, world!");
 }
