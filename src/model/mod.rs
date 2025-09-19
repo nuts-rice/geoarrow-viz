@@ -5,6 +5,7 @@ use crate::error::GeoArrowError;
 use std::fmt::Debug;
 pub type GeoArrowResult<T> = Result<T, GeoArrowError>;
 
+#[derive(Clone, Debug)]
 pub struct Bounds {
     pub min_x: f64, 
     pub min_y: f64, 

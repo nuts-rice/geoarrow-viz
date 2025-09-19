@@ -11,7 +11,7 @@ struct State {
     size: winit::dpi::PhysicalSize<u32>,
     surface_format: wgpu::TextureFormat,
 }
-
+#[derive(Clone)]
 pub struct MapStyle {
     pub point_color: String,
     pub line_color: String,
@@ -91,6 +91,7 @@ impl MapView {
         self.zoom
     }
 
+    //TODO: implement
     pub async fn render_to_canvas(&self, canvas_id: &str) -> GeoArrowResult<()>  {
           let document = web_sys::window()
             .ok_or_else(|| GeoArrowError::Wasm("No window".to_string()))?
@@ -114,16 +115,7 @@ impl MapView {
         context.set_fill_style_str(&self.style.polygon_fill.clone());
         context.set_stroke_style_str(&self.style.polygon_stroke.clone());
         context.set_line_width(self.style.line_width);
-
-        context.begin_path();
-        context.move_to(canvas.width() as f64 / 2.0, 0.0);
-        context.line_to(canvas.width() as f64 / 2.0, canvas.height() as f64);
-        context.move_to(0.0, canvas.height() as f64 / 2.);
-        context.line_to(canvas.width() as f64, canvas.height() as f64 / 2.);
-        context.stroke();
-
-
-        //let features = self.geoarrow_file.
+        
 
 
         tracing::info!("Rendering map {} to canvas {}", self.id, canvas_id);
