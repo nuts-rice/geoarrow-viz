@@ -111,6 +111,21 @@ impl MapView {
             .map_err(|_| GeoArrowError::Wasm("Context is not 2d".to_string()))?;
 
         context.clear_rect(0.0, 0.0, canvas.width() as f64, canvas.height() as f64);
+        context.set_fill_style_str(&self.style.polygon_fill.clone());
+        context.set_stroke_style_str(&self.style.polygon_stroke.clone());
+        context.set_line_width(self.style.line_width);
+
+        context.begin_path();
+        context.move_to(canvas.width() as f64 / 2.0, 0.0);
+        context.line_to(canvas.width() as f64 / 2.0, canvas.height() as f64);
+        context.move_to(0.0, canvas.height() as f64 / 2.);
+        context.line_to(canvas.width() as f64, canvas.height() as f64 / 2.);
+        context.stroke();
+
+
+        //let features = self.geoarrow_file.
+
+
         tracing::info!("Rendering map {} to canvas {}", self.id, canvas_id);
 
         Ok(())
