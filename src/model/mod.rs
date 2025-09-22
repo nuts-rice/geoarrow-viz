@@ -2,7 +2,6 @@ use crate::error::GeoArrowError;
 use arrow::datatypes::Schema;
 use geojson::FeatureCollection;
 use std::fmt::Debug;
-use wasm_bindgen::prelude::*;
 pub type GeoArrowResult<T> = Result<T, GeoArrowError>;
 
 #[derive(Clone, Debug)]

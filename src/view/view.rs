@@ -2,7 +2,7 @@ use crate::error::GeoArrowError;
 use crate::model::{Bounds, GeoArrowFile, GeoArrowResult};
 use std::sync::Arc;
 use web_sys::wasm_bindgen::JsCast;
-use winit::window::{Window, WindowId};
+use winit::window::Window;
 struct State {
     window: Arc<Window>,
     device: wgpu::Device,

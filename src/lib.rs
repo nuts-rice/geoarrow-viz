@@ -1,10 +1,8 @@
 use wasm_bindgen::prelude::*;
 mod error;
-use error::GeoArrowError;
 mod model;
-use model::{Bounds, GeoArrowFile, GeoArrowResult};
 mod view;
-use view::view::{MapStyle, MapView};
+use view::view::MapView;
 
 #[wasm_bindgen(start)]
 pub fn start() {
