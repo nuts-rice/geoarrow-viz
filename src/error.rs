@@ -11,5 +11,4 @@ pub enum GeoArrowError {
     Serialization(String),
     #[error("WebAssembly error: {0}")]
     Wasm(String),
-
 }

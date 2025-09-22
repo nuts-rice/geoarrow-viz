@@ -1,17 +1,16 @@
 use wasm_bindgen::prelude::*;
 mod error;
-use error::{GeoArrowError};
+use error::GeoArrowError;
 mod model;
-use model::{Bounds, GeoArrowFile, GeoArrowResult  };
+use model::{Bounds, GeoArrowFile, GeoArrowResult};
 mod view;
-use view::view::{MapView, MapStyle};
-
+use view::view::{MapStyle, MapView};
 
 #[wasm_bindgen(start)]
-fn start() {
+pub fn start() {
     tracing_subscriber::fmt::init();
 
-
-
-    println!("Hello, world!");
+    tracing::info!("Starting GeoArrow visualization engine");
+    let map_view = MapView::default();
+    map_view.render_to_canvas("canvas").unwrap();
 }
