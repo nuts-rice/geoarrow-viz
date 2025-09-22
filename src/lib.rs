@@ -5,7 +5,7 @@ mod view;
 use view::view::MapView;
 
 #[wasm_bindgen(start)]
-pub fn start() {
+pub fn main() {
     tracing_subscriber::fmt::init();
 
     tracing::info!("Starting GeoArrow visualization engine");
