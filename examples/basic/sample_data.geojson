@@ -1,0 +1,73 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Francisco",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.4194, 37.7749]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Los Angeles",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.2437, 34.0522]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Highway 101",
+        "type": "highway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.4194, 37.7749],
+          [-122.0822, 37.4221],
+          [-121.8863, 36.6777],
+          [-120.6596, 35.2828],
+          [-119.7871, 34.4208],
+          [-118.2437, 34.0522]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "California Central Valley",
+        "type": "region"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.0, 36.5],
+          [-121.0, 36.5],
+          [-121.0, 37.5],
+          [-122.0, 37.5],
+          [-122.0, 36.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sacramento",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.4944, 38.5816]
+      }
+    }
+  ]
+}
