@@ -46,7 +46,7 @@
     </div>
 
     <script type="module">
-        import init, { start, MapView } from './pkg/geoarrow_viz.js';
+        import init, { start } from './pkg/basic.js';
 
         let mapView = null;
 
@@ -72,13 +72,9 @@
 
         function createAndRenderMap() {
             try {
-                // Create a new map view
-                mapView = new MapView();
-
-                // Render to the canvas
-                mapView.render_to_canvas_wasm('canvas');
-
-                document.getElementById('statusText').textContent = 'Map rendered successfully!';
+                // The rendering is handled by the wasm_bindgen start function
+                // which automatically creates and renders the map
+                document.getElementById('statusText').textContent = 'Map render initiated! Check the canvas and console.';
 
             } catch (error) {
                 console.error('Failed to render map:', error);

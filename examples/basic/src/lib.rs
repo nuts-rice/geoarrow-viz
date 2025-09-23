@@ -1,5 +1,6 @@
 use geoarrow_viz::{model::GeoArrowFile, view::view::MapView};
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::prelude::*;
+
 #[wasm_bindgen(start)]
 pub fn main() {
     tracing_subscriber::fmt::init();
@@ -13,4 +14,9 @@ pub fn main() {
     map_view.render_to_canvas("canvas").unwrap();
 
     println!("Hello, world!");
+}
+
+#[wasm_bindgen]
+pub fn start() {
+    tracing_subscriber::fmt::init();
 }
