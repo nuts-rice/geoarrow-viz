@@ -7,6 +7,7 @@ use crate::error::GeoArrowError;
 pub mod renderer;
 pub mod geometry;
 pub mod transforms;
+pub mod tiles;
 
 // Higher-level rendering pipeline function
 pub type RenderPipeline<T> = fn(T) -> GeoArrowResult<()>;

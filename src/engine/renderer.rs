@@ -74,6 +74,8 @@ pub const render_polygon: fn(&[(f64, f64)], &RenderContext, &CanvasRenderingCont
         Ok(())
     };
 
+
+
 // Utility path drawing function
 pub const draw_path: fn(&[(f64, f64)], &CanvasRenderingContext2d) -> GeoArrowResult<()> =
     |points, context| {
